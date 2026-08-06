@@ -1,15 +1,16 @@
+import { Container } from "@/components/layout/container";
+import { ProductCard } from "@/features/products/components/product-card";
 import { getProducts } from "@/features/products/services/get-products";
 export default async function ShopPage() {
   const products = await getProducts();
 
   return (
-    <div>
-      {products.map((product) => (
-        <div key={product.id}>
-          name : {product.name} <br />
-          price : {product.price}
-        </div>
-      ))}
-    </div>
+    <Container>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        {products.map((product) => (
+          <ProductCard product={product} key={product.id} />
+        ))}
+      </div>
+    </Container>
   );
 }
