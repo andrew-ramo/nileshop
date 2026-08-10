@@ -3,7 +3,7 @@ import { getProductById } from "@/features/products/services/get-products";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-
+import { AddToCartButton } from "@/features/cart/components/add-to-cart-button";
 type Props = {
   params: Promise<{ id: string }>;
 };
@@ -31,6 +31,7 @@ export default async function ProductPage({ params }: Props) {
             <Badge>{product.category}</Badge>
           </div>
           <p className="text-base">{product.description}</p>
+          <AddToCartButton product={product} />
         </div>
       </div>
     </Container>
