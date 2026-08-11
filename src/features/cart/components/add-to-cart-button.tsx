@@ -10,12 +10,12 @@ type Props = {
 export function AddToCartButton({ product }: Props) {
   const items = useCartStore((state) => state.items);
   const addToCart = useCartStore((state) => state.addItem);
-  const removeFromCart = useCartStore((state) => state.removeItem);
+  const decreaseQuantity = useCartStore((state) => state.decreaseQuantity);
 
   const cartItem = items.find((item) => item.id === product.id);
   return cartItem ? (
     <div>
-      <Button onClick={() => removeFromCart(product.id)}>-</Button>
+      <Button onClick={() => decreaseQuantity(product.id)}>-</Button>
       <p aria-live="polite" aria-label={`Quantity: ${cartItem.quantity}`}>
         {cartItem.quantity}
       </p>
