@@ -2,6 +2,7 @@ import { Container } from "@/components/layout/container";
 import { CartIcon } from "@/features/cart/components/cart-icon";
 import { ThemeToggle } from "@/components/common/theme-toggle";
 import Link from "next/link";
+import { WishlistIcon } from "@/features/wishlist/components/wishlist-icon";
 
 export function Navbar() {
   return (
@@ -16,6 +17,7 @@ export function Navbar() {
           </div>
           <div className="flex items-center gap-4">
             <CartIcon />
+            <WishlistIcon />
             <ThemeToggle />
           </div>
         </div>

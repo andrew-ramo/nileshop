@@ -14,7 +14,7 @@ export function AddToCartButton({ product }: Props) {
 
   const cartItem = items.find((item) => item.id === product.id);
   return cartItem ? (
-    <div>
+    <div className="flex items-center justify-between">
       <Button onClick={() => decreaseQuantity(product.id)}>-</Button>
       <p aria-live="polite" aria-label={`Quantity: ${cartItem.quantity}`}>
         {cartItem.quantity}

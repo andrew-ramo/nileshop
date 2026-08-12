@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { AddToCartButton } from "@/features/cart/components/add-to-cart-button";
+import { WishlistToggle } from "@/features/wishlist/components/wishlist-toggle";
 type Props = {
   params: Promise<{ id: string }>;
 };
@@ -25,7 +26,10 @@ export default async function ProductPage({ params }: Props) {
           />
         </div>
         <div className="flex flex-col gap-6">
-          <h1 className="text-2xl">{product.name}</h1>
+          <div className="flex items-center justify-between">
+            <h1 className="text-2xl">{product.name}</h1>
+            <WishlistToggle product={product} />
+          </div>
           <div className="flex gap-4">
             <p className="text-xl font-bold">{product.price} EGP</p>
             <Badge>{product.category}</Badge>

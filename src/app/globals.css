@@ -51,6 +51,7 @@
   --shadow-elevated:
     0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --container-app: 80rem;
+  --color-favorite: oklch(0.637 0.237 25.331);
 }
 
 :root {
