@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { AddToCartButton } from "@/features/cart/components/add-to-cart-button";
 import { WishlistToggle } from "@/features/wishlist/components/wishlist-toggle";
 import { RecentlyViewedTracker } from "@/features/recently-viewed/components/recently-viewed-tracker";
+import { RecentlyViewedSection } from "@/features/recently-viewed/components/recently-viewed-section";
 type Props = {
   params: Promise<{ id: string }>;
 };
@@ -39,6 +40,9 @@ export default async function ProductPage({ params }: Props) {
           <p className="text-base">{product.description}</p>
           <AddToCartButton product={product} />
         </div>
+      </div>
+      <div className="my-6">
+        <RecentlyViewedSection excludeId={product.id} />
       </div>
     </Container>
   );
