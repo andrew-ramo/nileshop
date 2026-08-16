@@ -5,6 +5,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { AddToCartButton } from "@/features/cart/components/add-to-cart-button";
 import { WishlistToggle } from "@/features/wishlist/components/wishlist-toggle";
+import { RecentlyViewedTracker } from "@/features/recently-viewed/components/recently-viewed-tracker";
 type Props = {
   params: Promise<{ id: string }>;
 };
@@ -16,6 +17,7 @@ export default async function ProductPage({ params }: Props) {
   if (product === null) notFound();
   return (
     <Container>
+      <RecentlyViewedTracker product={product} />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="relative aspect-square">
           <Image
